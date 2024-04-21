@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Hava Kalitesi Sonucu</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="top">
+                <img src="../static/images/picture_first_k_4.png" alt="temizhavalogo">
+                <ul>
+                    <li><a href="anasayfa.html">Home</a></li>
+                    <li><a href="index.html">Air Quality İndex</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="information">
+                <h1>Welcome to our Air Quality Index page</h1>
+                <p>
+                    This is an interactive platform that provides real-time air quality information for cities and countries worldwide.
+                    By logging into your personalized account, you can check the air quality of any city or country you're interested
+                    in, review the results, and share your own thoughts. Additionally, you can engage with other users on this
+                    platform, share your experiences, and exchange ideas about air quality.
+                </p>
+            </div>
+        </div>
+        <div class="container" id="formContainer">
+            <h1>Login</h1>
+            <div class="form-div">
+                <form class="login">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Email ...">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password ...">
+                    <button id="btn-form" onclick="login(event)" style="margin-left: 200px;">Login</button>
+                    <button id="btn-form" style="margin-left: 400px;">Sign in</button>
+                </form>
+            </div>
+        </div>
+        <div class="container" id="commentSection" style="display: none;">
+            <h1>Comment Area</h1>
+            <div class="form-div">
+                <form class="login txtarea">
+                    <input type="text" id="comment" placeholder="Text Area ...">
+                    <button id="btn-form" onclick="postComment()">Post Comment</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="writing">
+                By subscribing to our e-bulletin with your e-mail address, you can be instantly informed about upcoming news, reports and many other topics.
+            </div>
+            <div>
+                <form>
+                    <input type="text" id="email" placeholder="Enter Your E-Mail..">
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <script>
+            function login() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var a = document.querySelector('#formContainer');
+
+            event.preventDefault(); //sayfa yenilenmesini kaldırıyor!
+
+            if (email === "123" && password === "123") {
+                a.style.display = 'none';
+                document.getElementById('commentSection').style.display = "block";
+            } 
+            else
+                alert("Invalid username or password. Please try again.");
+        }
+        </script>
+    </body>
+</html>

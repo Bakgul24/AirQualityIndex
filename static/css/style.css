@@ -1,0 +1,271 @@
+
+            * {
+                margin: 0px;
+                padding: 0px;
+                font-family: 'Times New Roman', Times, serif;
+                box-sizing: border-box;
+                color: black;
+            }
+            .navbar {
+                background: url(../images/Temiz-Hava.jpg) no-repeat;
+                background-size: 100% 100%;
+                height: 500px;
+                color: aliceblue;
+                text-align: center;
+                
+            }
+            .navbar .top {backdrop-filter: blur(5px);}
+            
+            .navbar img {
+                float: left;
+                max-width: 50px;
+                height: auto;
+                margin-top: 15px;
+                margin-left: 50px;
+            }
+            .navbar ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: right;
+            }
+            .navbar ul li {
+                margin-top: 30px;
+                margin-bottom: 30px;
+                margin-right: 40px;
+            }
+
+            .navbar ul li a {
+                text-decoration: none;
+                color: aliceblue;
+            }
+
+            .navbar ul li a:hover {border-bottom: solid 1px aliceblue;}
+
+            .information {
+                margin-top: 50px;
+                max-width: 70%;
+                max-height: 300px;
+            }
+
+            .information h1 {
+                text-align: left;
+                padding: 0px 70px;
+            }
+
+            .information p {
+                text-align: left;
+                padding: 15px 70px;
+                line-height: 40px;
+                font-size: 3vh;
+            }
+
+            .contents {
+                padding: 0px 300px;
+                text-align: center;
+            }
+
+            .contents .bölümler {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .contents h1 {padding: 30px;}
+
+            .contents .bölümler .bilgi {
+                max-width: 400px;
+                margin: 70px 25px;
+                text-align: left;
+                line-height: 25px;
+                font-size: x-large;
+            }
+
+            .contents-two {
+                background-color: lightsteelblue;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                height: 300px;
+            }
+
+            .contents-two .info {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-around;
+            }
+
+            .contents-image img {
+                max-width: 200px;
+                height: auto;
+            }
+
+            .footer {
+                height: 300px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .footer .writing {width: 35%;}
+
+            .footer form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            input[type=text] {
+                width: 500px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+
+            input[type=password] {
+                width: 500px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=email] {
+                width: 500px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+                width: 100px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                background-color: cornflowerblue;
+            }
+
+            input[type=submit]:hover {background-color:mediumpurple;}
+
+            .table-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 550px;
+            }
+
+            .table-content table {
+                margin-top: 30px;
+            }
+
+            .table-content table, td, th {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+
+            .table-content td, th{
+                padding: 15px;
+            }
+
+            .getİnfo {
+                background-color: lightsteelblue;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                height: 300px;
+            }
+
+            .getİnfo form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .getİnfo img {
+                max-width: 300px;
+            }
+
+            .air-info {
+                border: 2px solid black;
+                border-radius: 10px;
+                width: 320px;
+                height: 160px;
+                padding: 20px;
+                background-color: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -160px;
+                margin-top: -80px;
+                text-align: center;
+            }
+
+            .air-info p {
+                margin-top: 5px;
+            }
+
+            .container {
+                padding: 50px 0px;
+                width: 100%;
+                background-color: lightsteelblue;
+            }
+
+            .container h1 {
+                text-align: center
+            }
+
+            .container .form-div {
+                display: flex;
+                justify-content: center;
+            }
+
+            .container .login {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+
+            .container .txtarea {
+                align-items: center;
+            }
+
+            .container .form-div .login label {
+                margin-top: 20px;
+            }
+
+            #btn-form {
+                width: 100px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                background-color: cornflowerblue;
+            }
+
+            #btn-form:hover {
+                border: 1px solid black;
+            }
+
+            #comment {
+                width: 500px;
+                height: 200px;
+                padding: 12px 12px;
+                margin: 8px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }

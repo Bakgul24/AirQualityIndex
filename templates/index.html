@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Air Quality</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="top">
+                <img src="../static/images/picture_first_k_4.png" alt="temizhavalogo">
+                <ul>
+                    <li><a href="anasayfa.html">Home</a></li>
+                    <li><a href="index.html">Air Quality İndex</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="information">
+                <h1>Air Pollution and Health Effects</h1>
+                <p>
+                    Air Quality Index (English: Air Quality Index - AQI) is the measure of the quality of the air in a particular place.
+                    It is the measure used to express. Increasing number of indicators in Air Quality measurements
+                    It states that the percentage of air pollution will cause serious health problems. Air Quality Index values
+                    It is classified according to stages and each stage is symbolized with a color.
+                </p>
+            </div>
+        </div>
+        <div class="table-content">
+            <div>
+                <h1>Air Quality Assessment Chart</h1>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Air Quality Index Value</th>
+                        <th>Health Related Level</th>
+                        <th>Colors</th>
+                    </tr>
+                    <tr style="background-color: green;">
+                        <td>0-50</td>
+                        <td>Good</td>
+                        <td>Green</td>
+                    </tr>
+                    <tr style="background-color: yellow;">
+                        <td>51-100</td>
+                        <td>Medium</td>
+                        <td>Yellow</td>
+                    </tr>
+                    <tr style="background-color:orange ;">
+                        <td>101-150</td>
+                        <td>Sensitive</td>
+                        <td>Orange</td>
+                    </tr>
+                    <tr style="background-color: red;">
+                        <td>151-200</td>
+                        <td>Unhealty</td>
+                        <td>Red</td>
+                    </tr>
+                    <tr style="background-color: purple;">
+                        <td>201-300</td>
+                        <td>Bad</td>
+                        <td>Purple</td>
+                    </tr>
+                    <tr style="background-color: brown;">
+                        <td>301-500</td>
+                        <td>Dangerous</td>
+                        <td>Brown</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div class="getİnfo">
+            <div>
+                <form id="cityForm" method="post" action="/check_air_quality">
+                    <label for="sehir">Do You Want to Know the Air Quality of Which City?</label>
+                    <input type="text" id="sehir" name="city" placeholder="Şehir İsmi...">
+                    <input type="submit" name="submitBtn" value="Search">
+                </form>
+            </div>
+            <div>
+                <img src="../static/images/Types_Of-_Clouds_VectorForFree.png" alt="bulutresmi">
+            </div>
+        </div>
+        <div class="footer">
+            <div class="writing">
+                By subscribing to our e-bulletin with your e-mail address, you can be instantly informed about upcoming news, reports and many other topics.
+            </div>
+            <div>
+                <form>
+                    <input type="text" id="email" placeholder="Enter Your E-Mail..">
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
