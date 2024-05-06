@@ -12,9 +12,9 @@
             <div class="top">
                 <img src="../static/images/picture_first_k_4.png" alt="temizhavalogo">
                 <ul>
-                    <li><a href="anasayfa.html">Home</a></li>
-                    <li><a href="index.html">Air Quality İndex</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="{{ url_for('anasayfa') }}">Home</a></li>
+                    <li><a href="{{ url_for('index') }}">Air Quality İndex</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
                 </ul>
             </div>
             <div class="information">
@@ -27,31 +27,56 @@
                 </p>
             </div>
         </div>
+        {% if not logged_in %}
         <div class="container" id="formContainer">
             <h1>Login</h1>
             <div class="form-div">
-                <form class="login">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" placeholder="Email ...">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Password ...">
-                    <button id="btn-form" onclick="login(event)" style="margin-left: 200px;">Login</button>
-                    <button id="btn-form" style="margin-left: 400px;">Sign in</button>
+                <form class="login" id="loginpage" action="/authenticate" method="POST">
+                    <label for="login_email">Email</label>
+                    <input type="text" id="login_email" name="login_email" placeholder="Email ...">
+                    <label for="login_password">Password</label>
+                    <input type="password" id="login_password" name="login_password" placeholder="Password ...">
+                    <button id="btn-form" onclick="loginin()" style="margin-left: 200px;">Login</button>
+                    <button id="btn-form" onclick="signopen()" style="margin-left: 400px;">Sign in</button>
+                </form>
+
+                <form class="login" id="signpage" style="display: none;" action="/signup" method="POST">
+                    <label for="signup_name">Name</label>
+                    <input type="text" id="signup_name" name="signup_name" placeholder="Name ...">
+                    <label for="signup_email">Email</label>
+                    <input type="text" id="signup_email" name="signup_email" placeholder="Email ...">
+                    <label for="signup_city">City/Country</label>
+                    <input type="text" id="signup_city" name="signup_city" placeholder="City ...">
+                    <label for="signup_password">Password</label>
+                    <input type="password" id="signup_password" name="signup_password" placeholder="Password ...">
+                    <button id="btn-form" onclick="sign()" style="margin-left: 200px;">Sign in</button>
+                    <button id="btn-form" onclick="loginopen()" style="margin-left: 400px;">Login</button>
                 </form>
             </div>
         </div>
-        <div class="container" id="commentSection" style="display: none;">
+        {% else %}
+        <div class="container" id="commentSection">
             <h1>Comment Area</h1>
-            <div class="form-div">
+            <div class="form-div profile">
+                <div>
+                    <div><strong>Name:</strong>  {{ name }}</div>
+                    <div><strong>Email:</strong> {{ email }}</div>
+                    <div><strong>City/Country:</strong> {{ city }}</div>
+                    <div><p><strong>The air quality value of the place you live in: </strong>{{ quality }}</p></div>
+                    <div><p><strong>The air quality prediction value of the place you live in: </strong>{{ prediction }}</p></div>
+                </div>
+                
                 <form class="login txtarea">
                     <input type="text" id="comment" placeholder="Text Area ...">
                     <button id="btn-form" onclick="postComment()">Post Comment</button>
                 </form>
             </div>
-        </div>
+        </div> 
+        {% endif %}
         <div class="footer">
             <div class="writing">
-                By subscribing to our e-bulletin with your e-mail address, you can be instantly informed about upcoming news, reports and many other topics.
+                By subscribing to our e-bulletin with your e-mail address, you can be instantly 
+                informed about upcoming news, reports and many other topics.
             </div>
             <div>
                 <form>
@@ -61,20 +86,17 @@
             </div>
         </div>
         <script>
-            function login() {
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var a = document.querySelector('#formContainer');
+            function loginopen() {
+                event.preventDefault(); //sayfa yenilenmesini kaldırıyor!
+                document.querySelector('#signpage').style.display = "none";
+                document.querySelector('#loginpage').style.display = "flex";
+            }
 
-            event.preventDefault(); //sayfa yenilenmesini kaldırıyor!
-
-            if (email === "123" && password === "123") {
-                a.style.display = 'none';
-                document.getElementById('commentSection').style.display = "block";
-            } 
-            else
-                alert("Invalid username or password. Please try again.");
-        }
+            function signopen() {
+                event.preventDefault(); //sayfa yenilenmesini kaldırıyor!
+                document.querySelector('#signpage').style.display = "flex";
+                document.querySelector('#loginpage').style.display = "none";
+            }
         </script>
     </body>
 </html>

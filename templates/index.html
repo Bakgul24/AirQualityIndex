@@ -11,9 +11,9 @@
             <div class="top">
                 <img src="../static/images/picture_first_k_4.png" alt="temizhavalogo">
                 <ul>
-                    <li><a href="anasayfa.html">Home</a></li>
-                    <li><a href="index.html">Air Quality İndex</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="{{ url_for('anasayfa') }}">Home</a></li>
+                    <li><a href="{{ url_for('index') }}">Air Quality İndex</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
                 </ul>
             </div>
             <div class="information">
@@ -75,7 +75,7 @@
             <div>
                 <form id="cityForm" method="post" action="/check_air_quality">
                     <label for="sehir">Do You Want to Know the Air Quality of Which City?</label>
-                    <input type="text" id="sehir" name="city" placeholder="Şehir İsmi...">
+                    <input type="text" id="sehir" name="city" placeholder="City or Country...">
                     <input type="submit" name="submitBtn" value="Search">
                 </form>
             </div>
